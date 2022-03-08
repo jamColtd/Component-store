@@ -5,7 +5,7 @@
         default-active="$route.path"
         router
         mode="vertical"
-        background-color="#304156"
+        background-color="#2d3274"
         text-color="#bfcbd9"
         active-text-color="#409EFF">
         <SidebarItem v-for="menu in menuList" :key="menu.path" :item="menu" />

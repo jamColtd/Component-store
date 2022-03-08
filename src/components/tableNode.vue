@@ -1,73 +1,75 @@
 <template>
   <div class="hello">
-    <table class="table table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th class="table-th" scope="col">
-            <el-checkbox
-              v-model="checkAll"
-              @change="e => handleCheckAllChange(e, dataList)"
-              :indeterminate="isIndeterminate"
+    <el-card>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th class="table-th" scope="col">
+              <el-checkbox
+                v-model="checkAll"
+                @change="e => handleCheckAllChange(e, dataList)"
+                :indeterminate="isIndeterminate"
+                ></el-checkbox>
+            </th>
+            <th class="table-th" scope="col">商品图片</th>
+            <th class="table-th" scope="col">商品名称</th>
+            <th class="table-th" scope="col">商品描述</th>
+            <th class="table-th" scope="col">是否展示</th>
+            <th class="table-th" scope="col">销量程度</th>
+            <th class="table-th" scope="col">操作</th>
+          </tr>
+        </thead>
+        <draggable v-model="dataList" tag="tbody" v-if="dataList.length>0">
+          <tr v-for="(element,idx) in dataList" :key="idx" class="table-tr">
+            <td class="table-td">
+              <el-checkbox
+                v-model="element.checked"
+                @change="e => handleCheckedCitiesChange(e, element,idx)"
               ></el-checkbox>
-          </th>
-          <th class="table-th" scope="col">商品图片</th>
-          <th class="table-th" scope="col">商品名称</th>
-          <th class="table-th" scope="col">商品描述</th>
-          <th class="table-th" scope="col">是否展示</th>
-          <th class="table-th" scope="col">销量程度</th>
-          <th class="table-th" scope="col">操作</th>
-        </tr>
-      </thead>
-      <draggable v-model="dataList" tag="tbody" v-if="dataList.length>0">
-        <tr v-for="(element,idx) in dataList" :key="idx" class="table-tr">
-          <td class="table-td">
-            <el-checkbox
-              v-model="element.checked"
-              @change="e => handleCheckedCitiesChange(e, element,idx)"
-            ></el-checkbox>
-          </td>
-          <td class="table-td">
-            <img :src="element.img" class="goods-image"/>
-          </td>
-          <td class="table-td">{{ element.goods_name }}</td>
-          <td class="table-td">{{ element.goods_desc }}</td>
-          <td class="table-td">
-            <el-switch
-              v-model="element.show"
-              active-color="#13ce66"
-              inactive-color="#ff4949"
+            </td>
+            <td class="table-td">
+              <img :src="element.img" class="goods-image"/>
+            </td>
+            <td class="table-td">{{ element.goods_name }}</td>
+            <td class="table-td">{{ element.goods_desc }}</td>
+            <td class="table-td">
+              <el-switch
+                v-model="element.show"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+              >
+              </el-switch>
+            </td>
+            <td class="table-td">
+              <span>{{element.hotWord}}</span>
+              <el-button
+                type="text"
+                icon="el-icon-edit"
+                @click="categoryEdit(idx, element, index, '2')"
+              ></el-button>
+            </td>
+            <td class="table-td">
+              <el-button
+                type="text"
+                @click="(target,
+                targetIndex) => editFun(element, target, targetIndex)"
+              >编辑</el-button>
+              <el-button type="text" style="color:red" @click="delFun(element,idx,index)">删除</el-button>
+            </td>
+          </tr>
+        </draggable>
+        <draggable v-else-if='item.list.length==0' tag='tbody'>
+          <tr>
+            <td
+              colspan="7"
+              style="text-align: center;font-size:16px;border-bottom:1px solid #ebeef5"
             >
-            </el-switch>
-          </td>
-          <td class="table-td">
-            <span>{{element.hotWord}}</span>
-            <el-button
-              type="text"
-              icon="el-icon-edit"
-              @click="categoryEdit(idx, element, index, '2')"
-            ></el-button>
-          </td>
-          <td class="table-td">
-            <el-button
-              type="text"
-              @click="(target,
-              targetIndex) => editFun(element, target, targetIndex)"
-            >编辑</el-button>
-            <el-button type="text" style="color:red" @click="delFun(element,idx,index)">删除</el-button>
-          </td>
-        </tr>
-      </draggable>
-      <draggable v-else-if='item.list.length==0' tag='tbody'>
-        <tr>
-          <td
-            colspan="7"
-            style="text-align: center;font-size:16px;border-bottom:1px solid #ebeef5"
-          >
-            暂无数据！
-          </td>
-        </tr>
-      </draggable>
-    </table>
+              暂无数据！
+            </td>
+          </tr>
+        </draggable>
+      </table>
+    </el-card>
   </div>
 </template>
 

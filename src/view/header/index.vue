@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-card>
+  <div class="header">
+    <el-card class="header">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>活动管理</el-breadcrumb-item>
@@ -22,5 +22,8 @@ export default {
 </script>
 
 <style>
-
+.header{
+  background-color: #2d3274;
+  border: 1px solid #2d3274;
+}
 </style>

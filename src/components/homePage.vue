@@ -1,8 +1,8 @@
 <!--
  * @Author: min.dong
  * @Date: 2022-03-07 17:50:35
- * @LastEditTime: 2022-03-08 08:31:12
- * @FilePath: \vue\demo1\src\components\homePage.vue
+ * @LastEditTime: 2022-03-08 16:18:46
+ * @FilePath: \Component-store\src\components\homePage.vue
 -->
 <template>
   <el-container style="height:100%">
@@ -41,6 +41,7 @@ import Breadcrumb from '@/view/header/index'
 import HomePage from '@/components/homePage'
 import TableNode from '@/components/tableNode'
 import Collapse from '@/view/UIcomponent/collapse'
+import Home from '@/view/Home/index'
 import Menu from './menu.vue'
   export default {
     components: {
@@ -57,8 +58,8 @@ import Menu from './menu.vue'
         menuList:[
           {
             path: '/',
-            name: 'HomePage',
-            component: HomePage,
+            name: 'Home',
+            component: Home,
             navItem:'首页',
             children:[]
           },
@@ -111,7 +112,8 @@ import Menu from './menu.vue'
     height: 100%;
   }
   .el-header, .el-footer {
-    background-color: #304156;
+    /* background-color: #304156; */
+    background-color: #2d3274;
     color: #bfcbd9;
     text-align: center;
     line-height: 60px;
@@ -125,7 +127,7 @@ import Menu from './menu.vue'
   }
 
   .el-main {
-    background-color: #E9EEF3;
+    background-color: #353d88;
     color: #333;
     text-align: center;
     line-height: 160px;
