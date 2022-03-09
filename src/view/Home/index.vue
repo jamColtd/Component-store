@@ -93,7 +93,6 @@ export default {
         max: 'dataMax'
       },
       yAxis: {
-        color:['#2f4554','#2f4554', '#61a0a8', '#d48265','#91c7ae'],
         type: 'category',
         data: ['打野', '上单', 'ADC', '辅助', '中单'],
         inverse: true,
@@ -107,6 +106,17 @@ export default {
           name: 'LOL区域',
           type: 'bar',
           data: data,
+          itemStyle:{
+            normal:{
+              color: function(params) {
+                //通过数组下标选择颜色
+                var colorList = [
+                  '#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',
+                  ];
+                return colorList[params.dataIndex]
+              },
+            }
+          },
           label: {
             show: true,
             position: 'right',
@@ -128,7 +138,7 @@ export default {
       var data = option.series[0].data;
       for (var i = 0; i < data.length; ++i) {
         if (Math.random() > 0.9) {
-          data[i] += Math.round(Math.random() * 2000);
+          data[i] += Math.round(Math.random() * 500);
         } else {
           data[i] += Math.round(Math.random() * 200);
         }
@@ -138,7 +148,7 @@ export default {
 
     setInterval(function() {
       update();
-    }, 3000);
+    }, 1000);
   },
   methods:{
 

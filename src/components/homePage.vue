@@ -1,7 +1,7 @@
 <!--
  * @Author: min.dong
  * @Date: 2022-03-07 17:50:35
- * @LastEditTime: 2022-03-08 16:18:46
+ * @LastEditTime: 2022-03-09 11:17:26
  * @FilePath: \Component-store\src\components\homePage.vue
 -->
 <template>
@@ -40,7 +40,9 @@ import routerList from '../router/index'
 import Breadcrumb from '@/view/header/index'
 import HomePage from '@/components/homePage'
 import TableNode from '@/components/tableNode'
+import TableNode2 from '@/view/table2/index'
 import Collapse from '@/view/UIcomponent/collapse'
+import BorderStyle from '@/components/BorderStyle'
 import Home from '@/view/Home/index'
 import Menu from './menu.vue'
   export default {
@@ -81,6 +83,20 @@ import Menu from './menu.vue'
                 name:'table',
                 navItem:'表格',
                 component:TableNode,
+                children:[]
+              },
+              {
+                path:'/borderStyle',
+                name:'borderStyle',
+                navItem:'边框',
+                component:BorderStyle,
+                children:[]
+              },
+              {
+                path:'/TableNode2',
+                name:'TableNode2',
+                navItem:'表格2',
+                component:TableNode2,
                 children:[]
               }
             ]
