@@ -149,9 +149,17 @@ export default {
     setInterval(function() {
       update();
     }, 1000);
+
+    this.getFun()
   },
   methods:{
-
+    getFun(){
+      let arr = [1,2,3,4,6]
+      for (let i = arr.length - 1; i >= 0; i--) {
+        console.log(i,arr[i])
+        // distArray[this.categoryEditNameIndex].list.splice(removeIndexs[i], 1);
+      }
+    }
   }
 }
 </script>

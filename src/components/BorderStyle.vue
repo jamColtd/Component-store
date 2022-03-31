@@ -1,7 +1,7 @@
 <!--
  * @Author: min.dong
  * @Date: 2022-03-09 08:15:00
- * @LastEditTime: 2022-03-09 16:06:56
+ * @LastEditTime: 2022-03-10 09:42:04
  * @FilePath: \Component-store\src\components\BorderStyle.vue
 -->
 <template>
@@ -29,11 +29,71 @@ export default {
   },
   methods:{
     getData(){
-      let data = new Set()
-      data.add({name:1})
-      data.add({name:1})
-      data.add({name:2})
-      console.log(data)
+      let arr =[
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/xtc-watch/z6a.jpg",
+          "goods_id": "543",
+          "goods_price": "1098",
+          "goods_name": "Z6A",
+          "goods_desc": "翻转双摄 | 旗舰新品",
+          "show": true
+        },
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/xtc-pods/x01.jpg",
+          "goods_id": "517",
+          "goods_price": "498",
+          "goods_name": "护耳耳机",
+          "goods_desc": "星梦粉 | 新色上市",
+          "show": true
+        },
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/bbk-pens/x3.jpg",
+          "goods_id": "525",
+          "goods_price": "998",
+          "goods_name": "扫描笔",
+          "goods_desc": "哪里不会扫哪里",
+          "show": true
+        },
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/xtc-watch/q1a.jpg",
+          "goods_id": "515",
+          "goods_price": "598",
+          "goods_name": "Q1A",
+          "goods_desc": "",
+          "show": true
+        },
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/xtc-watch/z5a.png",
+          "goods_id": "507",
+          "goods_price": "998",
+          "goods_name": "Z5A",
+          "goods_desc": "",
+          "show": true
+        },
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/xtc-watch/z6.png",
+          "goods_id": "505",
+          "goods_price": "1598",
+          "goods_name": "Z6",
+          "goods_desc": "",
+          "show": true
+        },
+        {
+          "img": "https://bbkofficial.oss-cn-beijing.aliyuncs.com/MALL/classify-products/xtc-watch/q1c.png",
+          "goods_id": "513",
+          "goods_price": "398",
+          "goods_name": "Q1C",
+          "goods_desc": "",
+          "show": true
+        }
+      ];
+      let arr1 = [1,2,3,4,5,6]
+      console.log(JSON.parse(JSON.stringify(arr)),'开始')
+      // arr.splice(e.newIndex, 0, arr.splice(e.oldIndex, 1)[0]);
+      // arr.splice(6, 0, arr.splice(0,1)[0]) 第一位移到最后一位
+      arr.splice(5, 0, arr.splice(0,1)[0])
+      // arr.splice(0,1)
+      console.log(arr)
     }
   }
 }
