@@ -6,6 +6,7 @@ import Collapse from '@/view/UIcomponent/collapse'
 import Home from '@/view/Home/index'
 import BorderStyle from '../components/BorderStyle.vue'
 import TableNode2 from '../view/table2/index'
+import EidtTableNode from '../view/EditTableNode/index'
 
 Vue.use(Router)
 
@@ -50,6 +51,13 @@ export default new Router({
           name:'TableNode2',
           navItem:'表格2',
           component:TableNode2,
+          children:[]
+        },
+        {
+          path:'/EidtTableNode',
+          name:'EidtTableNode',
+          navItem:'编辑表格',
+          component:EidtTableNode,
           children:[]
         }
       ]

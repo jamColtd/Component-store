@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "echarts": "^5.3.1",
+    "edittable": "^0.1.2",
+    "el-edittable": "0.0.1",
     "element-ui": "^2.15.6",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",

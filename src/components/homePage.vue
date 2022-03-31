@@ -1,7 +1,7 @@
 <!--
  * @Author: min.dong
  * @Date: 2022-03-07 17:50:35
- * @LastEditTime: 2022-03-09 11:17:26
+ * @LastEditTime: 2022-03-31 15:30:03
  * @FilePath: \Component-store\src\components\homePage.vue
 -->
 <template>
@@ -45,6 +45,7 @@ import Collapse from '@/view/UIcomponent/collapse'
 import BorderStyle from '@/components/BorderStyle'
 import Home from '@/view/Home/index'
 import Menu from './menu.vue'
+import EidtTableNode from '../view/EditTableNode/index'
   export default {
     components: {
       Menu,
@@ -97,6 +98,13 @@ import Menu from './menu.vue'
                 name:'TableNode2',
                 navItem:'表格2',
                 component:TableNode2,
+                children:[]
+              },
+              {
+                path:'/EidtTableNode',
+                name:'EidtTableNode',
+                navItem:'编辑表格',
+                component:EidtTableNode,
                 children:[]
               }
             ]
